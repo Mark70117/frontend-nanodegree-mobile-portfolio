@@ -5,7 +5,7 @@ module.exports = function (grunt, config, ngrok) {
         nokey: true,
         locale: 'en_US',
         thresold: 40,
-        url: 'http://5c5e81a8.ngrok.io'
+        url: 'http://8d4206c9.ngrok.io'
       },
       local: {
         options: {
