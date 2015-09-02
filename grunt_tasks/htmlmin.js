@@ -7,7 +7,7 @@ module.exports = function (grunt, config) {
             collapseWhitespace: true
           },
         files: {
-          'index.html': 'src/index.inline.html'
+          'index.html': config.srcDir + 'index.inline.html'
         }
       }
     }

@@ -4,9 +4,9 @@ module.exports = function (grunt, config) {
       preinline: {
         files: [{
           expand: true,
-          cwd: 'src/css', 
+          cwd: config.srcDir + 'css', 
           src: ['*.css','!*.min.css'],
-          dest: 'src/css',
+          dest: config.srcDir + 'css',
           ext: '.min.css'
         }]
       }
