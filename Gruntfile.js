@@ -18,6 +18,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'copy',
+    'responsive_images',
     'cssmin',
     'inline',
     'htmlmin'

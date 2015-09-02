@@ -1,21 +1,27 @@
 module.exports = function (grunt, config) {
   grunt.config.merge ({
     responsive_images: {
-      dev: {
+      options: {
+        engine: 'im',
         sizes: [
           {
             name: 'small',
-            height: 70
+            height: '75px',
+            quality:  70
           },
           {
             name: 'medium',
-            height: 75
+            height: '150px',
+            quality: 80
           },
           {
             name: 'large',
-            height: 150
+            height: '300px',
+            quality: 90
           }
-        ],
+        ]
+      },
+      dev: {
         files: [
           {
             expand: true, 

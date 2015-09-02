@@ -27,7 +27,8 @@
     "ngrok": "~0.2.1",
     "grunt-inline": "~0.3.6",
     "grunt-contrib-htmlmin": "~0.4.0",
-    "grunt-contrib-cssmin": "~0.13.0"
+    "grunt-contrib-cssmin": "~0.13.0",
+    "grunt-contrib-imagemin": "~0.9.4"
   },
   "dependencies": {
     "grunt-responsive-images": "~0.1.6"
