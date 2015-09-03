@@ -491,7 +491,8 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover');
+  // P4 - more efficient
+  var items = document.getElementsByClassName('mover');
 
   // P4 - Only 5 possible phase values, calculate them once
   var phaseArray = [0,0,0,0,0];
@@ -532,6 +533,8 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
+    // P4 -- reduce paint time by playing with layers
+    elem.style.webkitTransform = 'translate3d(0,0,0)';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
   updatePositions();

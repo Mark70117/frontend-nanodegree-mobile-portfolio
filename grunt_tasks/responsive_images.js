@@ -16,7 +16,7 @@ module.exports = function (grunt, config) {
           },
           {
             name: 'large',
-            height: '300px',
+            height: '270px',
             quality: 90
           }
         ]
@@ -28,6 +28,12 @@ module.exports = function (grunt, config) {
             cwd: config.srcImgDir,
             src: ['**/*.{jpg,gif,png}'],
             dest: config.dstImgDir,
+          },
+          {
+            expand: true, 
+            cwd: config.srcViewsImgDir,
+            src: ['**/*.{jpg,gif,png}'],
+            dest: config.dstViewsImgDir,
           }
         ]
       }

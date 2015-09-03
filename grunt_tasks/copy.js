@@ -9,7 +9,16 @@ module.exports = function (grunt, config) {
             src: '*',
             dest: config.dstImgDir,
             flatten: false,
-            filter: 'isFile'}
+            filter: 'isFile'
+          },
+          {
+            expand: true, 
+            cwd: config.srcViewsImgDir,
+            src: '*',
+            dest: config.dstViewsImgDir,
+            flatten: false,
+            filter: 'isFile'
+          }
         ]
       }
     }
