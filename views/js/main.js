@@ -438,7 +438,7 @@ var resizePizzas = function(size) {
         console.log("bug in sizeSwitcher");
     }
 
-    randomPizzas = document.querySelectorAll(".randomPizzaContainer");
+    var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
 
     for (var i = 0; i < randomPizzas.length; i++) {
       randomPizzas[i].style.width = newWidth + '%';
@@ -457,8 +457,8 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
+var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -496,7 +496,7 @@ function updatePositions() {
 
   // P4 - Only 5 possible phase values, calculate them once
   var phaseArray = [0,0,0,0,0];
-  scaledScrollTop = document.body.scrollTop / 1250;
+  var scaledScrollTop = document.body.scrollTop / 1250;
   for (var i = 0; i < 5; i++) {
     phaseArray[i] = Math.sin(scaledScrollTop + (i % 5));
   }
@@ -524,7 +524,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   // P4 -- only want to generate pizza that can be on screen
-  rows = Math.ceil(window.screen.height/s);
+  var rows = Math.ceil(window.screen.height/s);
   for (var i = 0; i < (cols * rows); i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
