@@ -303,37 +303,37 @@ function randomName() {
 }
 
 // These functions return a string of a random ingredient from each respective category of ingredients.
-var selectRandomMeat = function() {
+var selectRandomMeat = function () {
   var randomMeat = pizzaIngredients.meats[Math.floor((Math.random() * pizzaIngredients.meats.length))];
   return randomMeat;
 };
 
-var selectRandomNonMeat = function() {
+var selectRandomNonMeat = function () {
   var randomNonMeat = pizzaIngredients.nonMeats[Math.floor((Math.random() * pizzaIngredients.nonMeats.length))];
   return randomNonMeat;
 };
 
-var selectRandomCheese = function() {
+var selectRandomCheese = function () {
   var randomCheese = pizzaIngredients.cheeses[Math.floor((Math.random() * pizzaIngredients.cheeses.length))];
   return randomCheese;
 };
 
-var selectRandomSauce = function() {
+var selectRandomSauce = function () {
   var randomSauce = pizzaIngredients.sauces[Math.floor((Math.random() * pizzaIngredients.sauces.length))];
   return randomSauce;
 };
 
-var selectRandomCrust = function() {
+var selectRandomCrust = function () {
   var randomCrust = pizzaIngredients.crusts[Math.floor((Math.random() * pizzaIngredients.crusts.length))];
   return randomCrust;
 };
 
-var ingredientItemizer = function(string) {
+var ingredientItemizer = function (string) {
   return "<li>" + string + "</li>";
 };
 
 // Returns a string with random pizza ingredients nested inside <li> tags
-var makeRandomPizza = function() {
+var makeRandomPizza = function () {
   var pizza = "";
 
   var numberOfMeats = Math.floor((Math.random() * 4));
@@ -359,7 +359,7 @@ var makeRandomPizza = function() {
 };
 
 // returns a DOM element for each pizza
-var pizzaElementGenerator = function(i) {
+var pizzaElementGenerator = function (i) {
   var pizzaContainer,             // contains pizza title, image and list of ingredients
       pizzaImageContainer,        // contains the pizza image
       pizzaImage,                 // the pizza image itself
@@ -399,12 +399,12 @@ var pizzaElementGenerator = function(i) {
 };
 
 // resizePizzas(size) is called when the slider in the "Our Pizzas" section of the website moves.
-var resizePizzas = function(size) {
+var resizePizzas = function (size) {
   window.performance.mark("mark_start_resize");   // User Timing API function
 
   // Changes the value for the size of the pizza above the slider
   function changeSliderLabel(size) {
-    switch(size) {
+    switch (size) {
       case "1":
         document.querySelector("#pizzaSize").innerHTML = "Small";
         return;
@@ -424,7 +424,8 @@ var resizePizzas = function(size) {
   // Iterates through pizza elements on the page and changes their widths
   //   as seen in Browser Rendering Optimization > Lesson 5 > Stop FSL Solution
   function changePizzaSizes (size) {
-    switch(size) {
+    var newWidth;
+    switch (size) {
       case "1":
         newWidth = 25;
         break ;
@@ -497,8 +498,8 @@ function updatePositions() {
   // P4 - Only 5 possible phase values, calculate them once
   var phaseArray = [0,0,0,0,0];
   var scaledScrollTop = document.body.scrollTop / 1250;
-  for (var i = 0; i < 5; i++) {
-    phaseArray[i] = Math.sin(scaledScrollTop + (i % 5));
+  for (var j = 0; j < 5; j++) {
+    phaseArray[j] = Math.sin(scaledScrollTop + (j % 5));
   }
 
   for (var i = 0; i < items.length; i++) {
@@ -520,7 +521,7 @@ function updatePositions() {
 window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var cols = 8;
   var s = 256;
   // P4 -- only want to generate pizza that can be on screen
