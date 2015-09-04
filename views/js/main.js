@@ -439,9 +439,13 @@ var resizePizzas = function (size) {
         console.log("bug in sizeSwitcher");
     }
 
+    // P4 -- store response to avoid repeating query
     var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
 
-    for (var i = 0; i < randomPizzas.length; i++) {
+    // P4 -- save compiler from having to do optimization in for loop
+    //       as per code review comments
+    var lenRandomPizzas = randomPizzas.length;
+    for (var i = 0; i < lenRandomPizzas; i++) {
       randomPizzas[i].style.width = newWidth + '%';
     }
   }
@@ -502,8 +506,12 @@ function updatePositions() {
     phaseArray[j] = Math.sin(scaledScrollTop + (j % 5));
   }
 
-  for (var i = 0; i < items.length; i++) {
-    var phase = phaseArray[(i % 5)];
+  // P4 -- save compiler from having to do opitimizations
+  //       as per code review comments
+  var phase;
+  var lenItems = items.length ;
+  for (var i = 0; i < lenItems; i++) {
+    phase = phaseArray[(i % 5)];
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -526,7 +534,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var s = 256;
   // P4 -- only want to generate pizza that can be on screen
   var rows = Math.ceil(window.screen.height/s);
-  for (var i = 0; i < (cols * rows); i++) {
+  
+  // P4 -- save compiler from having to do optimization in for loop
+  //       as per code review comments
+  var maxPizzas = (col*rows) ; 
+  for (var i = 0; i < maxPizzas; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";

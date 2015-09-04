@@ -18,6 +18,18 @@ named pizza that appear to the left of the name and items on the pizza.
 
 Optimizations are marked in code as comments with the prefix  '// P4'
 
+## hoisting in for loop
+  var declarations and any more than direct variable reference is for loop controls were
+  hoisted out of for loop in many cases.
+
+  * ```var lenRandomPizzas = randomPizzas.length;```
+  * ```var phaseArray = [0,0,0,0,0]; 
+  * ```var scaledScrollTop = document.body.scrollTop / 1250;```
+  * ```var phase;```
+  * ```var lenItems = items.length ;```
+  * ```var maxPizzas = (col*rows) ;```
+
+
 ## 60 fps optimizations
 
 The 60 fps optimizations were focus on the functions updatePositions() and addEventListener().
@@ -49,5 +61,8 @@ in percentages not pixels (px).
 Further optimization was done by storing the response to the document query instead of
 repeatedly making the same query inside a for loop.
 
+for example: ```var randomPizzas = document.getElementsByClassName("randomPizzaContainer");```
 
+## style changes
 
+## more efficient DOM queries
