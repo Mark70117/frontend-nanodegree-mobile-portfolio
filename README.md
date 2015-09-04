@@ -64,7 +64,7 @@ repeatedly making the same query inside a for loop.
 for example:
 
   * ```var randomPizzas = document.getElementsByClassName("randomPizzaContainer");```
-  * ```var movingPizzas = document.getElementById("#movingPizzas1");```
+  * ```var movingPizzas = document.getElementById("movingPizzas1");```
 
 ## style changes
 
