@@ -68,7 +68,7 @@ for example:
 
 ## style changes
 
-in ```views/css/styles.css```  ```-webkit-backface-visibility`` and ```backface-visibility```
+in ```views/css/styles.css```  ```-webkit-backface-visibility``` and ```backface-visibility```
 added to speed up painting.
 
 ## more efficient DOM queries
