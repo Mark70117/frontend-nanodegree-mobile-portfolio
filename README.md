@@ -23,12 +23,12 @@ Optimizations are marked in code as comments with the prefix  '// P4'
   hoisted out of for loop in many cases.
 
   * ```var lenRandomPizzas = randomPizzas.length;```
-  * ```var phaseArray = [0,0,0,0,0];``` 
+  * ```var phaseArray = [0,0,0,0,0];```
   * ```var scaledScrollTop = document.body.scrollTop / 1250;```
   * ```var phase;```
   * ```var lenItems = items.length ;```
-  * ```var maxPizzas = (col*rows) ;```
-
+  * ```var maxPizzas = (cols * rows) ;```
+  * ```var elem ;```
 
 ## 60 fps optimizations
 
@@ -61,8 +61,20 @@ in percentages not pixels (px).
 Further optimization was done by storing the response to the document query instead of
 repeatedly making the same query inside a for loop.
 
-for example: ```var randomPizzas = document.getElementsByClassName("randomPizzaContainer");```
+for example:
+
+  * ```var randomPizzas = document.getElementsByClassName("randomPizzaContainer");```
+  * ```var movingPizzas = document.getElementById("#movingPizzas1");```
 
 ## style changes
 
+in ```views/css/styles.css```  ```-webkit-backface-visibility`` and ```backface-visibility```
+added to speed up painting.
+
 ## more efficient DOM queries
+
+getElementById and getElementsByClass employed over more generic queries
+
+replace ```querySelectorAll('.mover')``` by ```getElementsByClassName```
+replace ```querySelectorAll(".randomPizzaContainer")``` by ```getElementsByClassName```
+replace ```querySelector("#movingPizzas1")``` by ```getElementById```

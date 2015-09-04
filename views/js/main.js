@@ -534,12 +534,15 @@ document.addEventListener('DOMContentLoaded', function () {
   var s = 256;
   // P4 -- only want to generate pizza that can be on screen
   var rows = Math.ceil(window.screen.height/s);
-  
+
   // P4 -- save compiler from having to do optimization in for loop
   //       as per code review comments
-  var maxPizzas = (col*rows) ; 
+  var maxPizzas = (cols * rows) ;
+  var elem ;
+  // P4 -- perform getElementById query once
+  var movingPizzas = document.getElementById('movingPizzas1');
   for (var i = 0; i < maxPizzas; i++) {
-    var elem = document.createElement('img');
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
@@ -548,7 +551,7 @@ document.addEventListener('DOMContentLoaded', function () {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     //P4 -- reduce paint time by playing with layers
     elem.style.webkitTransform = 'translate3d(0,0,0)';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    movingPizzas.appendChild(elem);
   }
   updatePositions();
 });
