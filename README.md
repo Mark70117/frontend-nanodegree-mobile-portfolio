@@ -75,6 +75,6 @@ added to speed up painting.
 
 getElementById and getElementsByClass employed over more generic queries
 
-replace ```querySelectorAll('.mover')``` by ```getElementsByClassName```
-replace ```querySelectorAll(".randomPizzaContainer")``` by ```getElementsByClassName```
-replace ```querySelector("#movingPizzas1")``` by ```getElementById```
+ * replace ```querySelectorAll('.mover')``` by ```getElementsByClassName```
+ * replace ```querySelectorAll(".randomPizzaContainer")``` by ```getElementsByClassName```
+ * replace ```querySelector("#movingPizzas1")``` by ```getElementById```
