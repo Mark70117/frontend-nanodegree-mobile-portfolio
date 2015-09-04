@@ -23,7 +23,7 @@ Optimizations are marked in code as comments with the prefix  '// P4'
   hoisted out of for loop in many cases.
 
   * ```var lenRandomPizzas = randomPizzas.length;```
-  * ```var phaseArray = [0,0,0,0,0]; 
+  * ```var phaseArray = [0,0,0,0,0];``` 
   * ```var scaledScrollTop = document.body.scrollTop / 1250;```
   * ```var phase;```
   * ```var lenItems = items.length ;```
